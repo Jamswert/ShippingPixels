@@ -13,8 +13,6 @@ public class CameraMotor : MonoBehaviour
     private void LateUpdate()
     {
         Vector3 delta = Vector3.zero;
-
-        // Check if inside bounds on x axis
         float deltaX = lookAt.position.x - transform.position.x;
         if (deltaX > boundX || deltaX < -boundX)
         {
@@ -27,7 +25,6 @@ public class CameraMotor : MonoBehaviour
                 delta.x = deltaX + boundX;
             }
         }
-        // Check if inside bounds on x axis
         float deltaY = lookAt.position.y - transform.position.y;
         if (deltaY > boundY || deltaY < -boundY)
         {

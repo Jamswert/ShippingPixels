@@ -12,8 +12,6 @@ public class PlayerController : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
-
-    // Update is called once per frame
     private void Update()
     {
         movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -32,7 +30,6 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.sprite = Sprites[3];
         }
     }
-
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + (movement.normalized * moveSpeed * Time.deltaTime));
